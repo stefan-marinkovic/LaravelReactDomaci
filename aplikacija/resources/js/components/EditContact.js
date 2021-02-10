@@ -5,7 +5,8 @@ class EditContact extends React.Component{
 state={
 fullName: '',
 email:'',
-phone:''
+phone:'',
+mesto_id:''
 }
 handleInput=(e)=>{
 this.setState({[e.target.name]:e.target.value});
@@ -26,6 +27,8 @@ async componentDidMount(){
     this.setState({fullName:res.data.contact.fullName});
     this.setState({email:res.data.contact.email});
     this.setState({phone:res.data.contact.phone});
+    this.setState({mesto_id:res.data.contact.mesto_id});
+
 }
 
     render(){
@@ -43,6 +46,10 @@ return(
     <div className="form-group">
 <input type="text" name="phone" className="form-control"
         value={this.state.phone} onChange={this.handleInput} placeholder="Enter phone" required/>
+    </div>
+    <div className="form-group">
+<input type="text" name="mesto_id" className="form-control"
+        value={this.state.mesto_id} onChange={this.handleInput} placeholder="Enter mesto" required/>
     </div>
     <div className="form-group">
 <input type="submit"  className="btn btn-primary"

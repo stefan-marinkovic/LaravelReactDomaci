@@ -71391,7 +71391,8 @@ var AddContact = /*#__PURE__*/function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       fullName: '',
       email: '',
-      phone: ''
+      phone: '',
+      mesto_id: ''
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleInput", function (e) {
@@ -71415,7 +71416,8 @@ var AddContact = /*#__PURE__*/function (_React$Component) {
                 _this.setState({
                   fullName: '',
                   email: '',
-                  phone: ''
+                  phone: '',
+                  mesto_id: ''
                 });
 
                 if (res.data.status === 200) {
@@ -71473,6 +71475,16 @@ var AddContact = /*#__PURE__*/function (_React$Component) {
         value: this.state.phone,
         onChange: this.handleInput,
         placeholder: "Enter phone",
+        required: true
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        name: "mesto_id",
+        className: "form-control",
+        value: this.state.mesto_id,
+        onChange: this.handleInput,
+        placeholder: "Enter mesto",
         required: true
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
@@ -71566,7 +71578,7 @@ var Contact = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-2"
+        className: "col-md-1"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "image"
       }, contact.fullName[0])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71577,11 +71589,13 @@ var Contact = /*#__PURE__*/function (_React$Component) {
         className: "col-md-2"
       }, contact.phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-2"
+      }, contact.mesto_id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "btn btn-warning",
         to: "/edit/".concat(contact.id)
       }, "Edit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-2"
+        className: "col-md-1"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-danger",
         onClick: function onClick() {
@@ -71832,7 +71846,8 @@ var EditContact = /*#__PURE__*/function (_React$Component) {
     _defineProperty(_assertThisInitialized(_this), "state", {
       fullName: '',
       email: '',
-      phone: ''
+      phone: '',
+      mesto_id: ''
     });
 
     _defineProperty(_assertThisInitialized(_this), "handleInput", function (e) {
@@ -71898,8 +71913,11 @@ var EditContact = /*#__PURE__*/function (_React$Component) {
                 this.setState({
                   phone: res.data.contact.phone
                 });
+                this.setState({
+                  mesto_id: res.data.contact.mesto_id
+                });
 
-              case 7:
+              case 8:
               case "end":
                 return _context2.stop();
             }
@@ -71947,6 +71965,16 @@ var EditContact = /*#__PURE__*/function (_React$Component) {
         value: this.state.phone,
         onChange: this.handleInput,
         placeholder: "Enter phone",
+        required: true
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        name: "mesto_id",
+        className: "form-control",
+        value: this.state.mesto_id,
+        onChange: this.handleInput,
+        placeholder: "Enter mesto",
         required: true
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
@@ -72129,8 +72157,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Stefan Marinkovic\Desktop\LaravelDomaci\aplikacija\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Stefan Marinkovic\Desktop\LaravelDomaci\aplikacija\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Stefan Marinkovic\Desktop\LaravelReactDomaci\aplikacija\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Stefan Marinkovic\Desktop\LaravelReactDomaci\aplikacija\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

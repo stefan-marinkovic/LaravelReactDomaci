@@ -13,7 +13,7 @@ return(
     <div className="card mb-3">
         <div className="card-body">
 <div className="row">
-    <div className="col-md-2">
+    <div className="col-md-1">
 
         <span className="image">{contact.fullName[0]}</span>
     </div>
@@ -27,11 +27,14 @@ return(
         {contact.phone}
         </div>
         <div className="col-md-2">
+        {contact.mesto_id}
+        </div>
+        <div className="col-md-2">
         <Link className="btn btn-warning" to ={`/edit/${contact.id}`}>
             Edit 
         </Link>
         </div>
-        <div className="col-md-2">
+        <div className="col-md-1">
         <button className="btn btn-danger" onClick={() => this.delContact(contact.id)}>
             Delete
         </button>

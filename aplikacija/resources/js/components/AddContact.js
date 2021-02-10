@@ -5,7 +5,8 @@ class AddContact extends React.Component{
 state={
 fullName: '',
 email:'',
-phone:''
+phone:'',
+mesto_id:''
 }
 handleInput=(e)=>{
 this.setState({[e.target.name]:e.target.value});
@@ -14,7 +15,7 @@ this.setState({[e.target.name]:e.target.value});
 saveContact =async(e)=>{
 e.preventDefault();
 const res= await axios.post("/contact",this.state);
-this.setState({fullName:'',email:'',phone:''});
+this.setState({fullName:'',email:'',phone:'',mesto_id:''});
 if(res.data.status === 200){
     this.props.history.push("/");
 }
@@ -36,6 +37,10 @@ return(
     <div className="form-group">
 <input type="text" name="phone" className="form-control"
         value={this.state.phone} onChange={this.handleInput} placeholder="Enter phone" required/>
+    </div>
+    <div className="form-group">
+<input type="text" name="mesto_id" className="form-control"
+        value={this.state.mesto_id} onChange={this.handleInput} placeholder="Enter mesto" required/>
     </div>
     <div className="form-group">
 <input type="submit"  className="btn btn-primary"

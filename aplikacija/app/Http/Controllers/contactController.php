@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use App\Mesto;
 
 class contactController extends Controller
 {
@@ -36,15 +37,25 @@ class contactController extends Controller
      */
     public function store(Request $request)
     {
-       $newContact= Contact::create([
-            'fullName'=>$request->fullName,
-            'email'=>$request->email,
-            'phone'=>$request->phone
-        ]);
-        if($newContact){
-
-            return response()->json(['status' => 200]);
-        }
+        $id=$request->mesto_id;
+       //  $s = Mesto::find($id);
+         if($id==15314 || $id==11000){
+           
+             $newContact= Contact::create([
+                 'fullName'=>$request->fullName,
+                 'email'=>$request->email,
+                 'phone'=>$request->phone,
+                 'mesto_id'=>$request->mesto_id
+             ]);
+             if($newContact){
+     
+                 return response()->json(['status' => 200]);
+             } 
+             
+         }
+         else{
+             echo 'Invalid input';             
+         }
     }
 
     /**
@@ -83,6 +94,7 @@ class contactController extends Controller
         $contact->fullName=$request->fullName;
         $contact->email=$request->email;
         $contact->phone=$request->phone;
+        $contact->mesto_id=$request->mesto_id;
         if($contact->save()){
         return response()->json(['status'=>200]);
 
